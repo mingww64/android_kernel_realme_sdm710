@@ -699,11 +699,9 @@ int oplus_battery_get_property(struct power_supply *psy,
 			val->intval = 2000;
 			break;
 #endif
-#ifndef CONFIG_OPLUS_SDM670_CHARGER
 		case POWER_SUPPLY_PROP_CHARGE_FULL:
-			val->intval = chip->batt_fcc;
+			val->intval = chip->batt_fcc * 1000;
 			break;
-#endif
 		case POWER_SUPPLY_PROP_BATTERY_FCC:
 			val->intval = chip->batt_fcc;
 			break;
